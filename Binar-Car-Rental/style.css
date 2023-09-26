@@ -1,0 +1,111 @@
+.header-color {
+  background-color: #f1f3ff;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.ml-25 {
+  margin-left: 25%;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
+}
+
+.mr-6 {
+  margin-right: 1.5rem;
+}
+
+.w-half {
+  width: 50%;
+}
+
+.p-12 {
+  padding: 3rem;
+}
+
+.p-16 {
+  padding: 4rem;
+}
+
+.p-circle {
+  padding: 0.7rem;
+}
+
+.px-16 {
+  padding: 0 4rem;
+}
+
+.py-16 {
+  padding: 4rem 0;
+}
+
+.px-32 {
+  padding: 0 8rem;
+}
+
+.pl-32 {
+  padding-left: 8rem;
+}
+
+.pr-16 {
+  padding-right: 4rem;
+}
+
+.pr-24 {
+  padding-right: 6rem;
+}
+
+.gap-32 {
+  gap: 8rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.mt-24 {
+  margin-top: 6rem;
+}
+
+.orange {
+  background-color: #f9cc00;
+}
+
+.red {
+  background-color: #fa2c5a;
+}
+
+.blue {
+  background-color: #0d28a6;
+}
+
+.green {
+  background-color: #5cb85f;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.font-extrabold {
+  font-weight: 700;
+}
+
+.font-bold {
+  font-weight: 600;
+}
