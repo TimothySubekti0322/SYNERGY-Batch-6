@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Landing Page - BCR</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="icon" href="favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="./style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Sidebar for Mobile -->
+    <section id="sidebar" class="d-sm-none position-fixed">
+        <div id="sidebar-inner" class="bg-light p-4">
+            <div class="d-flex flex-column gap-3">
+
+                <div class="d-flex justify-content-between w-full">
+                    <div class="fw-bold">BCR</div>
+                    <button id="sidebar-close" style="border: none; padding:0; background-color: #F8F9FA;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x-lg" viewBox="0 0 20 20">
+                            <path
+                                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- List of Menu -->
+                <div>Our Services</div>
+                <div>Why Us</div>
+                <div>Testimony</div>
+                <div>FAQ</div>
+                <button class="button-menu" style="">Register</button>
+
+            </div>
+        </div>
+    </section>
+
+    <header class=" d-flex flex-wrap justify-content-center py-4 mb-0 px-sm-32 px-4 header-color">
+        <a href="/" class="d-flex align-items-center mb-3 mb-0 me-auto link-body-emphasis text-decoration-none">
+            <div class="fs-4 blueBox"></div>
+        </a>
+
+        <!-- Header List for Desktop -->
+        <ul class=" d-none d-sm-flex nav nav-pills font-bold">
+            <li class="nav-item"><a href="#" class="nav-link text-black" aria-current="page">Our Services</a>
+            </li>
+            <li class="nav-item ml-2"><a href="#" class="nav-link text-black">Why Us</a></li>
+            <li class="nav-item ml-2"><a href="#" class="nav-link text-black">Testimonial</a></li>
+            <li class="nav-item ml-2"><a href="#" class="nav-link text-black">FAQ</a></li>
+            <li class="nav-item ml-6"><a href="#" class="btn fw-bold active text-white"
+                    style="background-color: #5CB85F; border-radius: 0;">Register</a></li>
+        </ul>
+
+        <!-- Header List for Mobile -->
+        <div id="hamburger-icon" class="d-sm-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" ight="50" fill="#222222" class="bi bi-list"
+                viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+        </div>
+    </header>
+
+    <section id="hero" class="w-full header-color">
+        <div class="px-2">
+            <div class="row flex-sm-row align-itlems-center g-5" style="margin: 0px;">
+                <div class="col-12 col-sm-7 pl-sm-32 pr-sm-24">
+
+                    <!-- Desktop -->
+                    <h1 class="d-none d-sm-block display-5 fw-bold text-body-emphasis lh-1 mb-3 lh-base">Sewa & Rental
+                        Mobil Terbaik di
+                        kawasan
+                        (Lokasimu)</h1>
+
+                    <!-- Mobile -->
+                    <h1 class="d-sm-none fw-bold text-body-emphasis lh-1 mb-3 lh-base" style="font-size: 2.5rem">Sewa &
+                        Rental Mobil Terbaik di
+                        kawasan
+                        (Lokasimu)</h1>
+                    <p id="hero-desc" class="lead w-75 w-below-sm-100">Selamat datang di Binar Car Rental. Kami
+                        menyediakan mobil
+                        kualitas terbaik
+                        dengan
+                        harga terjangkau. Selalu siap
+                        melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button id="button-sewa-mobil" type="button"
+                            class="btn btn-primary btn-lg px-sm-4 py-2 py-sm-0 px-1 me-md-2 border-0 "
+                            style="background-color: #5CB85F; border-radius: 2px;">Mulai Sewa Mobil</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-8 col-lg-5 flex justify-content-end px-0">
+                    <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693301/binarCarRental/img_car_burmy8.svg"
+                        class="d-block mr-0 ml-auto img-fluid" alt="Bootstrap Themes" width="800" height="800"
+                        loading="lazy">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="feature" class="mt-sm-24">
+        <div class="container p-4">
+            <div class="d-sm-flex gap-32 justify-content-center">
+                <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693300/binarCarRental/img_service_td4mlw.svg"
+                    id="image-best-car" class="">
+                <div class="d-sm-flex flex-sm-column gap-4 w-sm-half mt-below-sm-12">
+                    <h1 id="h1-best-car-rental">Best Car Rental for any kind of trip in (Lokasimu)!</h1>
+                    <p id="feature-desc">Sewa mobil di (Lokasimu) bersama Binar Car Rental jaminan harga lebih murah
+                        dibandingkan yang
+                        lain, kondisi mobil baru,
+                        serta kualitas pelayanan terbaik untuk perjalanan wisata, bisnis, wedding, meeting, dll.</p>
+                    <div class="feature-list">
+                        <img src="./images/fi_check.svg" class="background checklist-feature">
+                        <p class="d-inline feature-list-desc">Sewa Mobil Dengan Supir di Bali 12 Jam</p>
+                    </div>
+                    <div class="feature-list">
+                        <img src="./images/fi_check.svg" class="checklist-feature">
+                        <p class="d-inline feature-list-desc">Sewa Mobil Lepas Kunci di Bali 24 Jam</p>
+                    </div>
+                    <div class="feature-list">
+                        <img src="./images/fi_check.svg" class="checklist-feature">
+                        <p class="d-inline feature-list-desc">Sewa Mobil Jangka Panjang Bulanan</p>
+                    </div>
+                    <div class="feature-list">
+                        <img src="./images/fi_check.svg" class="checklist-feature">
+                        <p class="d-inline feature-list-desc">Gratis Antar - Jemput Mobil di Bandara</p>
+                    </div>
+                    <div class="feature-list">
+                        <img src="./images/fi_check.svg" class="checklist-feature">
+                        <p class="d-inline feature-list-desc">Layanan Airport Transfer / Drop In Out</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" class="mt-sm-24">
+        <div class="container">
+            <h1 id="why-us-title">Why Us ?</h1>
+            <p id="why-us-paragraph" class="my-sm-4">Mengapa harus pilih Binar Car Rental? </p>
+
+            <div class="d-flex flex-sm-row flex-column align-items-center gap-8">
+                <div class="card why-us-card ">
+                    <div class="card-body">
+                        <div class="rounded-circle p-circle flex justify-content-center orange w-fit">
+                            <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693302/binarCarRental/Vector_rsim1b.svg"
+                                class="why-us-card-logo" />
+                        </div>
+                        <h5 class="card-title mt-sm-3 font-extrabold why-us-card-title">Mobil Lengkap</h5>
+                        <p class="card-text why-us-card-text">Tersedia banyak pilihan mobil, kondisi masih baru, bersih
+                            dan terawat</p>
+                    </div>
+                </div>
+                <div class="card why-us-card">
+                    <div class="card-body">
+                        <div class="rounded-circle p-circle flex justify-content-center red w-fit">
+                            <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693301/binarCarRental/fi_tag_x3ivfh.svg"
+                                class="why-us-card-logo" />
+                        </div>
+                        <h5 class="card-title mt-sm-3 font-extrabold why-us-card-title">Harga Murah</h5>
+                        <p class="card-text why-us-card-text">Harga murah dan bersaing, bisa bandingkan harga kami
+                            dengan rental mobil
+                            lain</p>
+                    </div>
+                </div>
+                <div class="card why-us-card">
+                    <div class="card-body">
+                        <div class="rounded-circle p-circle flex justify-content-center blue w-fit">
+                            <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694705252/binarCarRental/fi_clock_vw3asx.svg"
+                                class="why-us-card-logo" />
+                        </div>
+                        <h5 class="card-title mt-sm-3 font-extrabold why-us-card-title">Layanan 24 jam</h5>
+                        <p class="card-text why-us-card-text">Siap melayani kebutuhan Anda selama 24 jam nonstop. Kami
+                            juga tersedia di
+                            akhir minggu</p>
+                    </div>
+                </div>
+                <div class="card why-us-card">
+                    <div class="card-body">
+                        <div class="rounded-circle p-circle flex justify-content-center green w-fit">
+                            <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693301/binarCarRental/fi_award_akqnvo.svg"
+                                class="why-us-card-logo" />
+                        </div>
+                        <h5 class="card-title mt-sm-3 font-extrabold why-us-card-title">Sopir Profesional</h5>
+                        <p class="card-text why-us-card-text">Sopir yang profesional, berpengalaman, jujur, ramah dan
+                            selalu tepat waktu
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="testimonial" class="mt-sm-24">
+        <div class="container mt-4">
+            <h1 id="Testimonial-heading" class="text-center w-full mt-4">Testimonial</h1>
+            <p id="Testimonial-text" class="my-sm-4 text-center">Berbagai review positif dari para pelanggan kami</p>
+
+            <!-- Carousel -->
+            <div id="myCarousel" class="carousel slide mb-6 pointer-event p-12" data-bs-ride="carousel"
+                style="background-color: #F1F3FF;">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class=""
+                        aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+                        class=""></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
+                        class="active" aria-current="true"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item ">
+                        <div class="d-flex flex-sm-row flex-column w-sm-half ml-sm-25  gap-4 align-items-center">
+                            <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693302/binarCarRental/img_photo_discce.svg"
+                                alt="" class="mr-sm-6" />
+                            <div
+                                class="d-flex flex-column gap-2 align-items-sm-start align-items-center carousel-item-div-right">
+                                <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693301/binarCarRental/Rate_vicxsq.svg"
+                                    style="width: 8rem;" alt="" />
+                                <p class="mt-4 w-below-sm-100">“Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    sed do eiusmod
+                                    lorem ipsum
+                                    dolor
+                                    sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet,
+                                    consectetur adipiscing elit, sed do eiusmod”</p>
+                                <p class="fw-bold w-below-sm-100">John Dee 32, Bromo</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="d-flex w-sm-half ml-sm-25 flex-sm-row flex-column gap-4 align-items-center">
+                            <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693304/binarCarRental/img_photo_1_jtraar.svg"
+                                alt="" class="mr-sm-6">
+                            <div
+                                class="d-flex flex-column gap-2 align-items-sm-start align-items-center carousel-item-div-right">
+                                <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693301/binarCarRental/Rate_vicxsq.svg"
+                                    style="width: 8rem;" alt="" />
+                                <p class="mt-4 w-below-sm-100">“Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    sed do eiusmod
+                                    lorem ipsum
+                                    dolor
+                                    sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet,
+                                    consectetur adipiscing elit, sed do eiusmod”</p>
+                                <p class="fw-bold w-below-sm-100">John Dee 32, Bromo</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carousel-item active">
+                        <div class="d-flex w-sm-half ml-sm-25 flex-sm-row flex-column gap-4 align-items-center">
+                            <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693302/binarCarRental/img_photo_discce.svg"
+                                alt="" class="mr-sm-6">
+                            <div
+                                class="d-flex flex-column gap-2 align-items-sm-start align-items-center carousel-item-div-right">
+                                <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693301/binarCarRental/Rate_vicxsq.svg"
+                                    style="width: 8rem;" alt="">
+                                <p class="mt-4 w-below-sm-100">“Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    sed do eiusmod
+                                    lorem ipsum
+                                    dolor
+                                    sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet,
+                                    consectetur adipiscing elit, sed do eiusmod”</p>
+                                <p class="fw-bold w-below-sm-100">John Dee 32, Bromo</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <div class="rounded-circle p-circle flex justify-content-center" style="background-color: black;">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </div>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <div class="rounded-circle p-circle flex justify-content-center" style="background-color: black;">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </div>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="hero2" class="mt-sm-24">
+        <div class="container p-sm-12 p-below-sm-hero2 rounded" style="background-color: #0D28A6;">
+            <div class="d-flex flex-column gap-4 align-items-center">
+                <h1 id="hero2-title" class="text-light">
+                    Sewa Mobil di (Lokasimu) Sekarang
+                </h1>
+                <p id="hero2-text" class="text-light w-half text-center">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna
+                    aliqua.
+                </p>
+                <button type="button" class="btn text-light" style="background-color: #5CB85F;">Mulai Sewa
+                    Mobil</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="mt-sm-24 p-below-sm-faq">
+        <div class="container">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-start align-items-center">
+
+                <!-- Left Component -->
+                <div class="w-sm-half">
+                    <h2 id="faq-title">Frequently Asked Question</h2>
+                    <p id="faq-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </div>
+
+                <!-- Accordion -->
+                <div class="accordion d-flex flex-column gap-4 w-sm-half" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button text-below-sm-accordion-title" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                Apa saja syarat yang dibutuhkan?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body text-below-sm-accordion-body">
+                                <strong>This is the first item's accordion body.</strong> It is shown by default, until
+                                the collapse
+                                plugin adds the appropriate classes that we use to style each element. These classes
+                                control the overall
+                                appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                                this with
+                                custom CSS or overriding our default variables. It's also worth noting that just about
+                                any HTML can go
+                                within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed text-below-sm-accordion-title" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                aria-controls="collapseTwo">
+                                Berapa hari minimal sewa mobil lepas kunci?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body text-below-sm-accordion-body">
+                                <strong>This is the second item's accordion body.</strong> It is hidden by default,
+                                until the collapse
+                                plugin adds the appropriate classes that we use to style each element. These classes
+                                control the overall
+                                appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                                this with
+                                custom CSS or overriding our default variables. It's also worth noting that just about
+                                any HTML can go
+                                within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed text-below-sm-accordion-title" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                aria-controls="collapseThree">
+                                Berapa hari sebelumnya sabaiknya booking sewa mobil?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body text-below-sm-accordion-body">
+                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until
+                                the collapse
+                                plugin adds the appropriate classes that we use to style each element. These classes
+                                control the overall
+                                appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                                this with
+                                custom CSS or overriding our default variables. It's also worth noting that just about
+                                any HTML can go
+                                within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed text-below-sm-accordion-title" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                                aria-controls="collapseFour">
+                                Apakah Ada biaya antar-jemput?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body text-below-sm-accordion-body">
+                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until
+                                the collapse
+                                plugin adds the appropriate classes that we use to style each element. These classes
+                                control the overall
+                                appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                                this with
+                                custom CSS or overriding our default variables. It's also worth noting that just about
+                                any HTML can go
+                                within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed text-below-sm-accordion-title" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
+                                aria-controls="collapseFive">
+                                Bagaimana jika terjadi kecelakaan
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body text-below-sm-accordion-body">
+                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until
+                                the collapse
+                                plugin adds the appropriate classes that we use to style each element. These classes
+                                control the overall
+                                appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                                this with
+                                custom CSS or overriding our default variables. It's also worth noting that just about
+                                any HTML can go
+                                within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mt-sm-24 py-sm-16">
+        <div class="container">
+            <div class="d-flex flex-sm-row flex-column justify-content-between">
+
+                <!-- First Component -->
+                <div class="d-flex flex-column gap-2">
+                    <p>
+                        Jalan Suroyo No. 161 Mayangan Kota<br />Probolonggo 672000
+                    </p>
+                    <p>
+                        binarcarrental@gmail.com
+                    </p>
+                    <p>
+                        081-233-334-808
+                    </p>
+                </div>
+
+                <!-- Second Component -->
+                <div class="d-flex flex-column gap-2" style="font-weight: 600;">
+                    <p>
+                        Our services
+                    </p>
+                    <p>
+                        Why Us
+                    </p>
+                    <p>
+                        Testimonial
+                    </p>
+                    <p>
+                        FAQ
+                    </p>
+                </div>
+
+                <!-- Third Component / Connect with us -->
+                <div class="d-flex flex-column gap-2">
+                    <p>
+                        Connect with us
+                    </p>
+
+                    <!-- Icon -->
+                    <div class="d-flex flex-row gap-3">
+                        <div class="rounded-circle p-circle flex justify-content-center"
+                            style="background-color: #0D28A6;">
+                            <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693299/binarCarRental/fi_facebook_1_p9or0k.svg"
+                                alt="">
+                        </div>
+                        <div class="rounded-circle p-circle" style="background-color: #0D28A6;">
+                            <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693299/binarCarRental/fi_instagram_1_dta5dn.svg"
+                                alt="">
+                        </div>
+                        <div class="rounded-circle p-circle" style="background-color: #0D28A6;">
+                            <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693299/binarCarRental/fi_twitter_1_u5gfpm.svg"
+                                alt="">
+                        </div>
+                        <div class="rounded-circle p-circle" style="background-color: #0D28A6;">
+                            <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693299/binarCarRental/fi_mail_1_x6bezb.svg"
+                                alt="">
+                        </div>
+                        <div class="rounded-circle p-circle" style="background-color: #0D28A6;">
+                            <img src="https://res.cloudinary.com/djkckue0o/image/upload/v1694693299/binarCarRental/fi_twitter_1_u5gfpm.svg"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright Binar -->
+                <div>
+                    <p class="mt-below-sm-copyright">
+                        Copyright Binar 2022
+                    </p>
+                </div>
+            </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="./script.js" charset="UTF-8"></script>
+</body>
+
+</html>
