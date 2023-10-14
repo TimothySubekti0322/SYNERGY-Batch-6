@@ -1,0 +1,21 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 3rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #92b4ec;
+}
+
+.valid {
+  color: #9fc088;
+  font-weight: bold;
+}
+
+.invalid {
+  color: #ff0000;
+  font-weight: bold;
+}
