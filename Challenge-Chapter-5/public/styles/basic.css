@@ -1,0 +1,349 @@
+/* Background */
+.bg-green {
+  background-color: #5cb85f;
+}
+
+.bg-blue {
+  background-color: #0d28a6;
+}
+
+.bg-silver {
+  background-color: #cfd4ed;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+/* display */
+.flex {
+  display: flex;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.hidden {
+  display: none;
+}
+
+/* position */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+/* overflow */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+/* Visibile */
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* Flex Row */
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Flex Column */
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+/* Flex Wrap */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+/* Flex grow */
+.flex-grow {
+  flex-grow: 1;
+}
+
+/* Flex Justify */
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* Align content */
+.content-start {
+  align-content: flex-start;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
+.content-around {
+  align-content: space-around;
+}
+
+.content-evenly {
+  align-content: space-evenly;
+}
+
+/* Align items */
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-between {
+  align-items: space-between;
+}
+
+.items-around {
+  align-items: space-around;
+}
+
+.items-evenly {
+  align-items: space-evenly;
+}
+
+/* Font size */
+.text-3xs {
+  font-size: 0.5rem;
+}
+
+.text-2xs {
+  font-size: 0.625rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-base {
+  font-size: 1rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+}
+
+/* Font weight */
+.font-thin {
+  font-weight: 100;
+}
+
+.font-extralight {
+  font-weight: 200;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+/* Text */
+.no-decoration {
+  text-decoration: none;
+}
+
+/* border */
+.no-border {
+  border: none;
+}
+
+/* text color */
+.text-white {
+  color: #ffffff;
+}
+
+.text-black {
+  color: #000000;
+}
+
+/* Rounded */
+.rounded-none {
+  border-radius: 0;
+}
+
+.rounded-sm {
+  border-radius: 0.125rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* shadow */
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}

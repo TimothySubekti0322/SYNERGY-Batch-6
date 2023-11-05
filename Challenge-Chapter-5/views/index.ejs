@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/styles/basic.css">
+    <link rel="stylesheet" href="/styles/margin.css">
+    <link rel="stylesheet" href="/styles/padding.css">
+    <link rel="stylesheet" href="/styles/width.css">
+    <link rel="stylesheet" href="/styles/height.css">
+    <link rel="stylesheet" href="/styles/custom.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <base href="http://localhost:8000/">
+</head>
+
+<body>
+    <div class="flex h-screen">
+
+        <!-- Blue Sidebar -->
+        <section id="blue-sidebar" class="h-screen bg-blue w-18 flex flex-col items-center py-2">
+
+            <!-- silver box -->
+            <div class="w-full h-16 p-3">
+                <div class="w-full h-full bg-silver"></div>
+            </div>
+
+            <!-- Dashboard -->
+            <button class="w-full h-16 bg-blue no-border mt-2">
+                <img src="/images/house.png" alt="" />
+                <p class="text-white text-2xs mt-05 mb-0">Dashboard</p>
+            </button>
+
+            <!-- Cars -->
+            <button class="w-full h-16 no-border mt-2 flex flex-col items-center justify-center py-2"
+                style="background-color: #FFFFFF4D;">
+                <img src="/images/truck.png" alt="" />
+                <p class="text-white text-2xs mt-05 font-bold mb-0">Cars</p>
+            </button>
+
+        </section>
+
+        <!-- Right Content -->
+        <section id="right-section" class="flex-grow flex flex-col h-screen overflow-y-auto">
+
+            <!-- Top Navbar -->
+            <section id="top-navbar" class="h-18 flex">
+
+                <!-- Silver rectangle -->
+                <div class="w-45 bg-white p-4">
+                    <div class="w-1-2 h-full bg-silver"></div>
+                </div>
+
+                <!-- Right side -->
+                <div class="flex-grow flex justify-between p-3 items-center">
+
+                    <!-- Hamburger Icon -->
+                    <img src="/images/hamburger_icon.png" alt="" />
+
+                    <!-- Right groups -->
+                    <div class="flex h-full items-center">
+                        <div id="search-container" class="flex">
+                            <input type="text" placeholder="Search" />
+                            <button id="search-btn" class="m-0 inline-block">Search</button>
+                        </div>
+                        <div id="profile-icon">U</div>
+                        <p class="ml-4 my-0">Unis Badri</p>
+                        <img src="/images/chevron_down.png" class="ml-4">
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="flex flex-grow">
+
+                <!-- White Navbar -->
+                <section id="white-navbar" class="w-45 flex flex-col py-2">
+                    <div class="h-16 w-full flex items-center ">
+                        <div class="font-bold py-2 w-full pl-4" style="color: #8A8A8A">
+                            Cars
+                        </div>
+                    </div>
+                    <div class="h-16 w-full flex items-center mt-2">
+                        <div class="bg-silver font-bold py-2 w-full pl-4">
+                            List Car
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main Content -->
+                <section id="main-content" class="flex-grow pt-4 px-4" style="background-color: #F4F5F7;">
+                    <div class="w-full">
+
+                        <!-- Breadcrumbs -->
+                        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+                            aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item font-bold">Cars</li>
+                                <li class="breadcrumb-item font-bold" aria-current="page">List Car</li>
+                            </ol>
+                        </nav>
+
+                        <!-- Title , message, and Button -->
+                        <div class="w-full flex justify-between items-center">
+                            <p class="text-2xl font-bold">List Car</p>
+                            <div id="messageContainer">
+
+                            </div>
+
+                            <button class="bg-blue px-2 py-1 text-white"><a href="/addCar"
+                                    class="no-decoration text-white">+ Add New
+                                    Car</a></button>
+                        </div>
+
+
+                        <!-- Category -->
+                        <div class="flex flex-row mt-2">
+
+                            <div class="p-2 chosen-category">
+                                All
+                            </div>
+
+                            <div class="p-2 ml-4 unchosen-category">
+                                Small
+                            </div>
+
+                            <div class="p-2 ml-4 unchosen-category">
+                                Medium
+                            </div>
+
+                            <div class="p-2 ml-4 unchosen-category">
+                                Large
+                            </div>
+                        </div>
+
+                        <!-- Card container -->
+                        <section class="mt-12">
+                            <div id="card-container" class="row row-cols-1 row-cols-md-3 gx-2">
+
+                            </div>
+
+                        </section>
+                    </div>
+                </section>
+
+            </div>
+
+        </section>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <div class="w-full h-full flex justify-center items-center">
+            <!-- Modal content -->
+            <div id="modal-content" class="flex-col flex items-center">
+
+                <div class="w-full" style="text-align: end;">
+                    <span class="close">&times;</span>
+                </div>
+
+                <img src="/images/vehicle.png" alt="" />
+                <p class="text-xl font-bold mt-4" style="text-align: center;">Menghapus Data Mobil</p>
+                <p class="w-3-5 mb-0" style="text-align: center;">Setelah dihapus, data mobil tidak dapat dikembalikan.
+                    Yakin
+                    ingin menghapus?</p>
+                <div class="w-full flex justify-around items-center mt-6">
+                    <button id="confirmDeleteBtn" class="text-white font-bold py-2 w-2-6 no-border"
+                        style="background: #0D28A6; border-radius: 2px;">Ya</button>
+                    <button id="cancelDeleteBtn" class="font-bold py-2 w-2-6 bg-white"
+                        style="color: #0D28A6; border:1px solid #0D28A6; border-radius: 2px;">Tidak</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="/scripts/index.js" charset="UTF-8"></script>
+</body>
+
+</html>

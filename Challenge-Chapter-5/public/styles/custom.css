@@ -1,0 +1,99 @@
+#search-btn {
+  border: 1px solid #0d28a6;
+  color: #0d28a6;
+  border-radius: 2px;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+#profile-icon {
+  border: none;
+  border-radius: 50%;
+  background-color: #cfd4ed;
+  padding: 0.5rem 0.75rem;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+#top-navbar {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+.chosen-category {
+  color: #0d28a6;
+  border: 1px solid #0d28a6;
+  border-radius: 2px;
+  background-color: #cfd4ed;
+  font-weight: 500;
+}
+
+.unchosen-category {
+  color: #aeb7e1;
+  border: 1px solid #aeb7e1;
+  border-radius: 2px;
+  background-color: white;
+  font-weight: 500;
+}
+
+.delete-button {
+  width: 45%;
+  border: 1px solid #fa2c5a;
+  border-radius: 2px;
+  color: #fa2c5a;
+  background-color: white;
+}
+
+.edit-button {
+  width: 45%;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  background-color: #5cb85f;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100vw; /* Full width */
+  height: 100vw; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+#modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 2rem;
+  border: 1px solid #888;
+  width: 30%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#cancelDeleteBtn {
+}
+
+#confirmDeleteBtn:hover {
+  background-color: #0b0684;
+}
