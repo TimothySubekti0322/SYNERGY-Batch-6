@@ -97,3 +97,13 @@
 #confirmDeleteBtn:hover {
   background-color: #0b0684;
 }
+
+#file-container {
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 0.25rem 0.5rem;
+}
+
+.loading {
+  background-color: #e6e9f6 !important;
+}

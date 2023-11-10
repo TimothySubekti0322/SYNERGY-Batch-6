@@ -6,6 +6,7 @@ export async function up(knex: Knex): Promise<any> {
     table.string("name", 255).notNullable();
     table.integer("cost").notNullable();
     table.enum("size", ["Small", "Medium", "Large"]).notNullable();
+    table.string("imageurl", 255).notNullable();
     table.timestamp("created_at", { useTz: true }).defaultTo(knex.fn.now());
     table.timestamp("updated_at", { useTz: true }).defaultTo(knex.fn.now());
   });

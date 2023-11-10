@@ -13,8 +13,8 @@ fetch("/api/cars").then((response) => {
             const card = document.createElement("div");
             card.className = "card mx-2 my-2";
             card.style = "width:31%";
-            card.innerHTML = `<img src="images/car.png" class="card-img-top mx-auto mt-4" alt=""
-        style="width: 80%;">
+            card.innerHTML = `<img src="${car.imageurl}" class="card-img-top mx-auto mt-4" alt=""
+        style="width: 80%; height:15rem">
         <div class="card-body">
             <p class="text-xs">${car.name}/${car.size}</p>
             <p class="text-sm font-bold">Rp ${formatCurrency(car.cost)} / hari</p>

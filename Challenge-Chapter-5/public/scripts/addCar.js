@@ -1,19 +1,14 @@
+const photo = document.getElementById('photo');
+const fileName = document.getElementById('file-name');
 const inputName = document.getElementById('name');
 const inputCost = document.getElementById('cost');
 const inputSize = document.getElementById('size');
 const submitBtn = document.getElementById('submit');
-const id = document.getElementById('carID').value;
 const formUpload = document.getElementById('form-upload');
-const imageUrl = document.getElementById('photo-preview').getAttribute('src');
-const fileName = document.getElementById('file-name');
-const photo = document.getElementById('photo');
+
+formUpload.addEventListener('submit', handleSubmit);
+
 photo.addEventListener('change', handleChangeInputFile);
-
-console.log(imageUrl);
-
-var name = inputName.value;
-var cost = inputCost.value;
-var size = inputSize.value;
 
 function handleChangeInputFile(e) {
     const files = e.target.files;
@@ -37,45 +32,22 @@ function trimFileName(fileName) {
     }
 }
 
-inputName.addEventListener('change', (event) => {
-    console.log(event.target.value);
-    name = event.target.value;
-});
-
-inputCost.addEventListener('change', (event) => {
-    console.log(event.target.value);
-    cost = event.target.value;
-});
-
-inputSize.addEventListener('change', (event) => {
-    console.log(event.target.value);
-    size = event.target.value;
-});
-
 submitBtn.addEventListener('click', handleSubmit);
 
 async function handleSubmit(e) {
     e.preventDefault();
 
-    // Change button text and disable it
     submitBtn.innerHTML = "Loading...";
     submitBtn.disabled = true;
     submitBtn.classList.add("loading");
-
-    // Create formData
     const formData = new FormData(formUpload);
-
-    // add Old image url
-    formData.append('imageurl', imageUrl);
-
-    // fetch API
-    fetch(`/api/cars/${id}`, {
-        method: 'PATCH',
+    fetch(`/api/cars/`, {
+        method: 'POST',
         body: formData,
     }).then((res) => {
         console.log(res);
         if (res.ok) {
-            console.log('Car updated successfully!');
+            console.log('Car Added successfully!');
             window.location.href = '/';
         }
         else {

@@ -5,6 +5,8 @@ import { Model, NotFoundError } from "objection";
 import path from "path";
 import bodyParser from "body-parser";
 import "dotenv/config";
+import storage from "./config/storage";
+import upload from "./config/upload";
 
 // instantiate express
 const app: Express = express();
@@ -59,7 +61,6 @@ app.get("/status", (req: Request, res: Response) => {
 app.get("/edit/:id", async (req: Request<IParams>, res: Response) => {
   const id = req.params.id;
   const car = await CarsModel.query().findById(id).throwIfNotFound();
-  // console.log(car);
   res.render("editCar", { car: car });
 });
 
@@ -68,35 +69,67 @@ app.get("/api/cars", async (_, res: Response) => {
   return res.json(cars);
 });
 
-app.post("/api/cars", async (req: Request<{}, {}, Cars>, res: Response) => {
-  const body = req.body;
-  // console.log(body);
-  const car = await CarsModel.query().insert(body).returning("*");
-  if (car) {
-    messageStatus = "Data Berhasil Disimpan";
-  } else {
-    messageStatus = "Data Gagal Disimpan";
+app.post(
+  "/api/cars",
+  upload.single("photo"),
+  async (req: Request<{}, {}, Cars>, res: Response) => {
+    try {
+      if (!req.file) throw new Error("No file uploaded.");
+
+      const fileBase64 = req.file.buffer.toString("base64");
+      const file = `data:${req.file.mimetype};base64,${fileBase64}`;
+
+      const uploadResponse = await storage.uploader.upload(file);
+
+      console.log(uploadResponse);
+
+      const carData = {
+        ...req.body,
+        imageurl: uploadResponse.url,
+      };
+
+      console.log(carData);
+      // console.log(body);
+      const car = await CarsModel.query().insert(carData).returning("*");
+      messageStatus = car ? "Data Berhasil Disimpan" : "Data Gagal Disimpan";
+      // return res.json(car);
+      res.redirect("/");
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: "Failed to upload file and save data" });
+    }
   }
-  // return res.json(car);
-  res.redirect("/");
-});
+);
 
 app.patch(
   "/api/cars/:id",
-  async (req: Request<IParams, {}, Partial<Cars>>, res: Response) => {
-    const body = req.body;
-    const id = req.params.id;
-    const cars = await CarsModel.query()
-      .where({ id })
-      .patch(body)
-      .throwIfNotFound()
-      .returning("*");
-    if (cars) {
-      messageStatus = "Data Berhasil Diupdate";
-    } else {
-      messageStatus = "Data Gagal Diupdate";
+  upload.single("photo"),
+  async (req: Request<{ id: string }, {}, Partial<Cars>>, res: Response) => {
+    try {
+      const carData = {
+        ...req.body,
+      };
+      console.log(carData);
+      if (req.file) {
+        const fileBase64 = req.file.buffer.toString("base64");
+        const file = `data:${req.file.mimetype};base64,${fileBase64}`;
+
+        const uploadResponse = await storage.uploader.upload(file);
+        carData.imageurl = uploadResponse.url;
+      }
+      const id = req.params.id;
+      const car = await CarsModel.query()
+        .where({ id })
+        .patch(carData)
+        .throwIfNotFound()
+        .returning("*");
+      messageStatus = car ? "Data Berhasil Diupdate" : "Data Gagal Diupdate";
+      console.log(messageStatus);
+      res.json(car);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: "Failed to upload file and save data" });
     }
-    return res.json(cars);
   }
 );
 

@@ -108,47 +108,68 @@
                         <p class="text-2xl font-bold">Update Car Information</p>
 
                         <!-- Form -->
-                        <div class="w-full bg-white p-4">
+                        <form id="form-upload" method="post" action="/api/cars" enctype="multipart/form-data">
+                            <div class="w-full bg-white p-4">
 
-                            <input id="carID" class="hidden" value="<%= car.id %>" />
+                                <input id="carID" class="hidden" value="<%= car.id %>" />
 
-                            <!-- Nama -->
-                            <div class="row">
-                                <p class="mb-0 col-3 py-2">Nama<span style="color:red">*</span></p>
-                                <div class="col-9">
-                                    <input id="name" type="text" name="name" class="w-1-2 h-full" placeholder="Avanza"
-                                        value="<%= car.name %>" required />
+                                <!-- Nama -->
+                                <div class="row">
+                                    <p class="mb-0 col-3 py-2">Nama<span style="color:red">*</span></p>
+                                    <div class="col-9">
+                                        <input id="name" type="text" name="name" class="w-1-2 h-full"
+                                            placeholder="Avanza" value="<%= car.name %>" required />
+                                    </div>
+                                </div>
+
+
+                                <!-- Sewa Per Hari -->
+                                <div class="row mt-4">
+                                    <p class="mb-0 col-3 py-2">Sewa Per Hari<span style="color:red">*</span></p>
+                                    <div class="col-9">
+                                        <input id="cost" type="number" name="cost" class="w-1-2 h-full"
+                                            placeholder="Rp 0.-" value="<%= car.cost %>" required />
+                                    </div>
+                                </div>
+
+                                <!-- Size -->
+                                <div class="row mt-4">
+                                    <p class="mb-0 col-3 py-2">Ukuran<span style="color:red">*</span></p>
+                                    <div class="col-9">
+                                        <select id="size" class="w-1-2 h-full" name="size">
+                                            <option value="Small" <% if(car.size=='Small' ) { %>selected<% } %>>Small
+                                            </option>
+                                            <option value="Medium" <% if(car.size==='Medium' ) { %>selected<% } %>
+                                                    >Medium</option>
+                                            <option value="Large" <% if(car.size==='Large' ) { %>selected<% } %>>Large
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Photo -->
+                                <div class="row mt-4">
+                                    <p class="mb-0 col-3 py-2">Foto<span style="color:red">*</span></p>
+                                    <div class="col-9 relative">
+                                        <input id="photo" type="file" name="photo" class="w-0 h-0 absolute" />
+                                        <div class="w-1-2 h-full flex justify-between items-center" id="file-container">
+                                            <p class="mb-0" style="color:#757575" id="file-name">Upload your file</p>
+                                            <label for="photo"><img src="/images/upload_icon.png"
+                                                    alt="upload button" /></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <p class="mb-0 col-3 py-2">Preview</p>
+                                    <div class="col-9"><img id="photo-preview" src="<%= car.imageurl %>" alt=""
+                                            class="w-1-2" /></div>
+
                                 </div>
                             </div>
-
-
-                            <!-- Sewa Per Hari -->
-                            <div class="row mt-4">
-                                <p class="mb-0 col-3 py-2">Sewa Per Hari<span style="color:red">*</span></p>
-                                <div class="col-9">
-                                    <input id="cost" type="number" name="cost" class="w-1-2 h-full" placeholder="Rp 0.-"
-                                        value="<%= car.cost %>" required />
-                                </div>
-                            </div>
-
-                            <!-- Size -->
-                            <div class="row mt-4">
-                                <p class="mb-0 col-3 py-2">Ukuran<span style="color:red">*</span></p>
-                                <div class="col-9">
-                                    <select id="size" class="w-1-2 h-full" name="size">
-                                        <option value="Small" <% if(car.size=='Small' ) { %>selected<% } %>>Small
-                                        </option>
-                                        <option value="Medium" <% if(car.size==='Medium' ) { %>selected<% } %>
-                                                >Medium</option>
-                                        <option value="Large" <% if(car.size==='Large' ) { %>selected<% } %>>Large
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
 
                         <!-- Cancel & Save Button -->
-                        <div class="flex flex-row absolute" style="bottom: 2rem;">
+                        <div class="flex flex-row relative mt-24 mb-8">
                             <button class="ml-4 bg-white text-white no-border p-3"
                                 style="border:1px solid #0D28A6; border-radius: 4px;"><a href="/"
                                     class="no-decoration font-bold" style="color: #0D28A6;">Cancel</a></button>

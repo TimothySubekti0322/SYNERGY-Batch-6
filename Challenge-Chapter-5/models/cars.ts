@@ -4,9 +4,10 @@ type size = "Small" | "Medium" | "Large";
 
 export class CarsModel extends Model {
   id!: number;
-  Name!: string;
-  Cost!: string;
-  Size!: size;
+  name!: string;
+  cost!: string;
+  size!: size;
+  imageurl!: string;
 
   static get tableName() {
     return "cars";

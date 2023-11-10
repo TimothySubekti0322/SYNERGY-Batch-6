@@ -15,6 +15,14 @@
   background-color: #ffffff;
 }
 
+.bg-none {
+  background-color: none;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
 /* display */
 .flex {
   display: flex;

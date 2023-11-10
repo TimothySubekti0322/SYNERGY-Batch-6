@@ -108,7 +108,7 @@
                         <p class="text-2xl font-bold">Add New car</p>
 
                         <!-- Form -->
-                        <form action="/api/cars" method="POST">
+                        <form id="form-upload" method="post" action="/api/cars" enctype="multipart/form-data">
                             <div class="w-full bg-white p-4">
 
                                 <!-- Nama -->
@@ -141,14 +141,30 @@
                                         </select>
                                     </div>
                                 </div>
+
+                                <!-- Photo -->
+                                <div class="row mt-4">
+                                    <p class="mb-0 col-3 py-2">Foto<span style="color:red">*</span></p>
+                                    <div class="col-9 relative">
+                                        <input id="photo" type="file" name="photo" class="w-0 h-0 absolute" />
+                                        <div class="w-1-2 h-full flex justify-between items-center" id="file-container">
+                                            <p class="mb-0" style="color:#757575" id="file-name">Upload your file</p>
+                                            <label for="photo"><img src="images/upload_icon.png"
+                                                    alt="upload button" /></label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
                             </div>
 
                             <!-- Cancel & Save Button -->
                             <div class="flex flex-row absolute" style="bottom: 2rem;">
                                 <button class="ml-4 bg-white text-white no-border p-3"
-                                    style="border:1px solid #0D28A6; border-radius: 4px;"><a href="/" class="no-decoration font-bold"
-                                        style="color: #0D28A6;">Cancel</a></button>
-                                <button type="submit" class="ml-4 bg-blue text-white no-border p-3 font-bold"
+                                    style="border:1px solid #0D28A6; border-radius: 4px;"><a href="/"
+                                        class="no-decoration font-bold" style="color: #0D28A6;">Cancel</a></button>
+                                <button type="submit" id="submit"
+                                    class="ml-4 bg-blue text-white no-border p-3 font-bold"
                                     style="border-radius: 4px;">Save</button>
                             </div>
                         </form>
@@ -164,6 +180,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    <script src="/scripts/addCar.js"></script>
 </body>
 
 </html>
