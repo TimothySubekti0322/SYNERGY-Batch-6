@@ -1,9 +1,11 @@
 # Project Title
 
 ## Description
+
 Mini Fullstack project that designed to fullfil SYNERGY Academy Challenge. This project will present you a simple CRUD operation to manage your Car rental. I'm using knex.js as an ORM and postgresql as a db. the set up will be explain futher below
 
 ## Technologies
+
 - Node.js
 - Express.js
 - Knex.js
@@ -12,6 +14,7 @@ Mini Fullstack project that designed to fullfil SYNERGY Academy Challenge. This 
 - Multer
 
 ## Entity Relationship Diagram
+
 ![Entity Relationship Diagram](https://res.cloudinary.com/dlx2svkha/image/upload/v1699601354/pgjs4wcw62oy7basnikw.png)
 This is the Table Structure of this project. I'm utilizing dbdiagram.io to represent the structure table
 
@@ -25,7 +28,9 @@ First of all you need to clone this project or download the file
 git clone https://github.com/TimothySubekti0322/SYNERGY-Batch-6.git
 cd Challenge-Chapter-5
 ```
+
 Then install all the dependencies by simply run this code on the terminal
+
 ```bash
   npm install
 ```
@@ -46,6 +51,7 @@ then to run the website locally , you need to run this command below
 ```
 
 Now you can run the website by type http://localhost:8000/ in your browser
+
 ## API Reference
 
 #### Get all cars
@@ -53,9 +59,10 @@ Now you can run the website by type http://localhost:8000/ in your browser
 ```http
   GET /api/cars
 ```
+
 response
 
-```json
+```bash
 {
   id: "",
   name: "",
@@ -75,7 +82,7 @@ response
 
 Body Request
 
-```JSON
+```bash
 {
   name: "",
   cost: "",
@@ -86,7 +93,7 @@ Body Request
 
 Response
 
-```JSON
+```bash
 {
   name: "",
   cost: "",
@@ -103,7 +110,7 @@ Response
 
 Body Request
 
-```JSON
+```bash
 {
   name: "",
   cost: "",
@@ -115,7 +122,7 @@ Body Request
 
 Response
 
-```JSON
+```bash
 {
   name: "",
   cost: "",
@@ -132,12 +139,12 @@ Response
 
 Response
 
-```JSON
+```bash
 {
   message: "Success delete articles"
 }
 ```
+
 ## Feedback
 
 If you have any feedback, please reach out to me at velmothy14@gmai.com
-
