@@ -76,7 +76,7 @@ Before you
 ```
 response
 
-```json
+```bash
 {
   id: "",
   name: "",
@@ -96,7 +96,7 @@ response
 
 Body Request
 
-```JSON
+```bash
 {
   name: "",
   cost: "",
@@ -107,7 +107,7 @@ Body Request
 
 Response
 
-```JSON
+```bash
 {
   name: "",
   cost: "",
@@ -124,7 +124,7 @@ Response
 
 Body Request
 
-```JSON
+```bash
 {
   name: "",
   cost: "",
@@ -136,7 +136,7 @@ Body Request
 
 Response
 
-```JSON
+```bash
 {
   name: "",
   cost: "",
@@ -153,7 +153,7 @@ Response
 
 Response
 
-```JSON
+```bash
 {
   message: "Success delete articles"
 }
