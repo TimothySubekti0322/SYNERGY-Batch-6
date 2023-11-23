@@ -1,6 +1,7 @@
 # SYNERGY ACADEMY CHALLENGE CHAPTER 6
 
 ## Description
+
 Project Overview
 
 This project, developed specifically for the SYNERGY Academy Challenge, introduces a sophisticated REST API designed for comprehensive car management. It incorporates state-of-the-art authentication features, ensuring a secure and reliable user experience.
@@ -14,13 +15,12 @@ This project, developed specifically for the SYNERGY Academy Challenge, introduc
 Detailed instructions for setup and configuration will be provided, ensuring a seamless integration and deployment process for users.
 
 ## Technologies
+
 - Node.js
 - Express.js
 - Knex.js
 - Typecript
 - Docker
-
-
 
 ## Getting Started
 
@@ -32,7 +32,9 @@ First of all you need to clone this project or **download the file**
 git clone https://github.com/TimothySubekti0322/SYNERGY-Batch-6.git
 cd Challenge-Chapter-6
 ```
+
 Then install all the dependencies by simply run this code on the terminal
+
 ```bash
   npm install
 ```
@@ -42,7 +44,9 @@ Next, Create a .env file that contains your personal database credential. Copy t
 ```bash
   JWT_SECRET_KEY=YOUR_JWT_SECRET_KEY_HERE
 ```
+
 Run this command bellow to create postgres container in docker
+
 ```bash
 docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 postgres
 ```
@@ -74,9 +78,10 @@ then to run the website locally , you need to run this command below
 Now you can run the API Service in http://localhost:8000/
 
 ## NOTES
+
 Super Admin Account
 
-**email**    : "superadmin@gmail.com"
+**email** : "superadmin@gmail.com"
 
 **password** : "superadmin"
 
@@ -84,14 +89,14 @@ Super Admin Account
 
 here i'm created API Documentation using stoplight Element
 
-https://timothysubekti0322.stoplight.io/studio/synergy-challenge-chapter-6?source=Rol0dZFmyas1kzMusKy5K
+https://timothysubekti0322.stoplight.io/studio/synergy-challenge-chapter-6?source=dQbuAYdc3_6SCa-NFTu5_
 
 **Download Postman File below**
 
 [Download Postman Collection](https://github.com/TimothySubekti0322/SYNERGY-Batch-6/blob/main/Challenge-Chapter-6/Challenge-Chapter-6.postman_collection.json)
 
-
 ### Get all cars
+
 Retrieve all cars Data
 
 **Authorization: bearer {{token}}**
@@ -101,6 +106,7 @@ Retrieve all cars Data
 ```
 
 ### Get car by id
+
 Retrieve spesific car data based on id
 
 **Authorization: bearer {{token}}**
@@ -110,6 +116,7 @@ Retrieve spesific car data based on id
 ```
 
 ### Get available cars
+
 Retrieve all cars that available
 
 **Authorization: bearer {{token}}**
@@ -119,6 +126,7 @@ Retrieve all cars that available
 ```
 
 ### Add Car
+
 add car data into database
 
 **Authorization: bearer {{token}}**
@@ -139,6 +147,7 @@ Body Request
 ```
 
 ### Delete Car
+
 Delete spesific car based on id
 
 **Authorization: bearer {{token}}**
@@ -148,6 +157,7 @@ Delete spesific car based on id
 ```
 
 ### Update Car
+
 Delete spesific car based on id
 
 **Authorization: bearer {{token}}**
@@ -168,6 +178,7 @@ Body Request
 ```
 
 ### Login
+
 Login as super admin, admin, or member
 
 ```bash
@@ -184,6 +195,7 @@ Body Request
 ```
 
 ### Register
+
 Register as a member
 
 ```bash
@@ -199,7 +211,9 @@ Body Request
   "password": String
 }
 ```
+
 ### Register admin
+
 Register an admin. This action just could be perform by super admin
 
 **Authorization: bearer {{token}}**
@@ -217,7 +231,9 @@ Body Request
   "password": String
 }
 ```
+
 ### Get Profile
+
 Get Profile from current User
 
 **Authorization: bearer {{token}}**
@@ -226,10 +242,6 @@ Get Profile from current User
   POST api/auth/profile
 ```
 
-
-
-
 ## Feedback
 
 If you have any feedback, please reach out to me at velmothy14@gmai.com
-
