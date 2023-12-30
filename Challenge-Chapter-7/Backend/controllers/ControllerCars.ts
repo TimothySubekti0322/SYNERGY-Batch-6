@@ -28,19 +28,29 @@ class ControllerCars implements IRestController {
     }
   }
 
-  async create(req: Request, res: Response) {
+  async create(req: Request<{}, {}>, res: Response) {
     try {
       const tokenPayload = await authToken(req, res);
       const email = tokenPayload.data.email;
+
+      // Set default value Created By & Updated By
       req.body.created_by = email;
       req.body.updated_by = email;
 
+      // Set default value Created At & Updated At
       const Date = getCurrentDate();
-
       req.body.created_at = Date;
       req.body.updated_at = Date;
 
-      const response = await ServiceCars.create(req.body);
+      req.body.available = true;
+
+      if (!req.file) {
+        return res.status(400).json({
+          message: "Photo is required",
+        });
+      }
+
+      const response = await ServiceCars.create(req.body, req.file);
       res.status(200).json(response);
     } catch (error) {
       res.status(500).json({
@@ -71,7 +81,11 @@ class ControllerCars implements IRestController {
       const Date = getCurrentDate();
       req.body.updated_at = Date;
 
-      const response = await ServiceCars.update(req.params.id, req.body);
+      const response = await ServiceCars.update(
+        req.params.id,
+        req.body,
+        req.file
+      );
       res.status(200).json(response);
     } catch (error) {
       res.status(500).json({

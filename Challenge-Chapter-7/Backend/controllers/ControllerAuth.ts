@@ -25,11 +25,17 @@ class ControllerLogin {
         },
         process.env.JWT_SECRET_KEY as string,
         {
-          expiresIn: "3h",
+          expiresIn: "7d",
         }
       );
 
-      res.status(200).json({ message: response.message, token: token });
+      res
+        .status(200)
+        .json({
+          message: response.message,
+          token: token,
+          role: response.data[0].role,
+        });
     } catch (error) {
       res.status(500).json({
         message: "JWT Error",

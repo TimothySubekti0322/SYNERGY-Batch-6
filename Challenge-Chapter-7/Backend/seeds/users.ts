@@ -21,7 +21,7 @@ export async function seed(knex: Knex): Promise<void> {
     {
       email: "member1@gmail.com",
       username: "Member 1",
-      password: "$2a$10$3lcMtbfQZHfAndBH5vHAQ.b9c2yXutgwzPdYOWdKavSh/8LvjUev2",
+      password: "$2a$10$765yR7YLbABVAu9AErf0mOh3AkwnBFwlNmq6258hnCsEDNtDS0Jjm",
       role: "member",
     },
   ]);

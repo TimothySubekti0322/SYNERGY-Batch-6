@@ -1,6 +1,7 @@
 import { Router } from "express";
 import Auth from "../../middlewares/Auth";
 import ControllerCars from "../../controllers/ControllerCars";
+import media from "../../config/media";
 
 class ApiCars {
   private router: Router;
@@ -25,12 +26,14 @@ class ApiCars {
     this.router.post(
       "/",
       Auth.authorizeAdminOrSuperAdmin,
+      media.upload.single("photo"),
       ControllerCars.create
     ); // POST /api/cars -> Menambahkan Mobil
 
     this.router.put(
       "/:id",
       Auth.authorizeAdminOrSuperAdmin,
+      media.upload.single("photo"),
       ControllerCars.update
     ); // PUT /api/cars/:id -> Mengubah Mobil Berdasarkan ID
 

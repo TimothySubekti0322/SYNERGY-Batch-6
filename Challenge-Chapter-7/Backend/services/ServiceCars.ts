@@ -1,15 +1,25 @@
 import { TParams } from "../interfaces/IRest";
 import Cars, { ICars } from "../models/Cars";
+import storage from "../config/storage";
 
-class ServiceBooks {
+class ServiceCars {
   constructor() {}
 
-  async create(payload: ICars) {
+  async create(payload: ICars, reqfile: any) {
     try {
-      const response = await Cars.create(payload);
+      const fileBase64 = reqfile.buffer.toString("base64");
+      const file = `data:${reqfile.mimetype};base64,${fileBase64}`;
+
+      const uploadResponse = await storage.uploader.upload(file);
+
+      console.log(uploadResponse);
+
+      const imageUrl: string = uploadResponse.url;
+      const response = await Cars.create(payload, imageUrl);
       return response;
     } catch (error) {
-      return error;
+      console.log(error);
+      return { error };
     }
   }
 
@@ -40,8 +50,19 @@ class ServiceBooks {
     }
   }
 
-  async update(id: string, payload: any) {
+  async update(id: string, payload: any, reqfile: any) {
     try {
+      if (reqfile) {
+        const fileBase64 = reqfile.buffer.toString("base64");
+        const file = `data:${reqfile.mimetype};base64,${fileBase64}`;
+
+        const uploadResponse = await storage.uploader.upload(file);
+
+        console.log(uploadResponse);
+
+        const imageUrl: string = uploadResponse.url;
+        payload.imageUrl = imageUrl;
+      }
       const response = await Cars.update(id, payload);
       return response;
     } catch (error) {
@@ -60,4 +81,4 @@ class ServiceBooks {
   }
 }
 
-export default new ServiceBooks();
+export default new ServiceCars();

@@ -6,8 +6,11 @@ export async function up(knex: Knex): Promise<void> {
     table.string("name", 255).notNullable();
     table.integer("cost").notNullable();
     table.enum("size", ["Small", "Medium", "Large"]).notNullable();
+    table.string("imageUrl").notNullable();
     table.boolean("available").notNullable();
     table.boolean("published").defaultTo(true);
+    table.string("start_rent", 255).defaultTo(null);
+    table.string("finish_rent", 255).defaultTo(null);
     table.string("created_at", 255).notNullable();
     table.string("created_by", 255).notNullable();
     table.string("updated_at", 255).notNullable();
