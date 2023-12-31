@@ -3,6 +3,7 @@ import Dashboard from "./pages/Dashboard";
 import Cars from "./pages/Cars";
 import AddCar from "./pages/AddCar";
 import EditCar from "./pages/EditCar";
+import UserPage from "./pages/UserPage";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
@@ -29,11 +30,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/userPage",
-    element: (
-      <div className="w-screen h-screen flex justify-center items-center text-white font-bold">
-        COMING SOON
-      </div>
-    ),
+    element: <UserPage />,
   },
 ]);
 export default function App() {
