@@ -144,6 +144,9 @@ member Account
 
 **password** : "member1"
 
+------------------------------------------------------
+
+Make Sure that your Docker (database server) , backend Server , and frontend server is running to run this app
 
 ## API Documentation
 
