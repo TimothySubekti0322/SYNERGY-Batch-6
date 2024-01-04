@@ -25,7 +25,7 @@ const PaginationDropdown: React.FC<PaginationDropdownProps> = ({
 
   // Limit Data
   const [limitDataValue, setLimitDataValue] = useState<number[]>(
-    Array.from({ length: totalPage }, (v, i) => i + 1)
+    Array.from({ length: totalPage }, (_, i) => i + 1)
   );
 
   // Limit
@@ -36,7 +36,7 @@ const PaginationDropdown: React.FC<PaginationDropdownProps> = ({
     setLimitValue(parseInt(event.target.value));
     const newTotalPage = Math.ceil(dataLength / parseInt(event.target.value));
     setTotalPageValue(newTotalPage);
-    setLimitDataValue(Array.from({ length: newTotalPage }, (v, i) => i + 1));
+    setLimitDataValue(Array.from({ length: newTotalPage }, (_, i) => i + 1));
   };
 
   // jump Page

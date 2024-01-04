@@ -115,11 +115,13 @@ const Dashboard = () => {
     event: React.ChangeEvent<unknown>,
     page: number
   ) => {
+    console.log(event);
     changeOrderData(page);
     setOrderPage(page);
   };
 
   const handleCarChange = (event: React.ChangeEvent<unknown>, page: number) => {
+    console.log(event);
     changeCarData(page);
     setCarPage(page);
   };

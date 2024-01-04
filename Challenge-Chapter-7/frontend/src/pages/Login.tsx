@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import PublicProvider from "../providers/PublicProvider";
 import axios from "axios";
 import { API_PRODUCTION } from "../data/API";
