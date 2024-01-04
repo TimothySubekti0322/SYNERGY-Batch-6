@@ -1,5 +1,3 @@
-import React from "react";
-
 const PhotoDescription = () => {
   return (
     <div className="mt-2 w-full flex">
