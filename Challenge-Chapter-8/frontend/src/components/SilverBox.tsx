@@ -1,5 +1,3 @@
-import React from "react";
-
 const SilverBox = () => {
   return (
     <div className="w-full h-16 p-3">
