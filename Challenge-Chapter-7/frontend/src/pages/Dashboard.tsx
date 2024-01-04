@@ -16,10 +16,11 @@ import type { CarData } from "../components/CarTable";
 import OrderTable from "../components/OrderTable";
 import type { OrderData } from "../components/OrderTable";
 import CircularProgress from "@mui/material/CircularProgress";
+import { API_PRODUCTION } from "../data/API";
 
 // API
-const orderDataAPI = "http://localhost:8000/api/orders/";
-const carDataAPI = "http://localhost:8000/api/cars/";
+const orderDataAPI = `${API_PRODUCTION}/api/orders/`;
+const carDataAPI = `${API_PRODUCTION}/api/cars/`;
 
 const Dashboard = () => {
   // Raw Data

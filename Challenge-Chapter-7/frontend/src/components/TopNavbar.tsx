@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import axios from "axios";
+import { API_PRODUCTION } from "../data/API";
 
 const TopNavbar = () => {
   const [isChevronDown, setIsChevronDown] = useState<boolean>(true);
@@ -12,14 +13,11 @@ const TopNavbar = () => {
   useEffect(() => {
     const getUserData = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:8000/api/auth/profile",
-          {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          }
-        );
+        const response = await axios.get(`${API_PRODUCTION}/api/auth/profile`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
         setUsername(response.data[0].username);
         setChar(response.data[0].username.charAt(0));
       } catch (error) {

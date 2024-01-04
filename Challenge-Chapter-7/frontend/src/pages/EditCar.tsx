@@ -16,6 +16,7 @@ import PhotoDescription from "../components/PhotoDescription";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import ImageViewer from "../components/ImageViewer";
+import { API_PRODUCTION } from "../data/API";
 
 const EditCar = () => {
   const [name, setName] = useState("");
@@ -32,14 +33,11 @@ const EditCar = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:8000/api/cars/${id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          }
-        );
+        const response = await axios.get(`${API_PRODUCTION}/api/cars/${id}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
         const data = response.data.data[0];
         console.log(data);
         setName(data.name);
@@ -93,7 +91,7 @@ const EditCar = () => {
     formData.append("photo", photo!);
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/cars/${id}`,
+        `${API_PRODUCTION}/api/cars/${id}`,
         formData,
         {
           headers: {
@@ -139,7 +137,7 @@ const EditCar = () => {
 
           <div className="flex grow">
             {/* <!-- White Navbar --> */}
-            <WhiteNavbar />
+            <WhiteNavbar title1="" title2="" />
 
             {/* <!-- Main Content --> */}
             <section

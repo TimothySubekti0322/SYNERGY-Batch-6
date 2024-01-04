@@ -14,6 +14,7 @@ import { FaRegEdit } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
 import Modal from "@mui/material/Modal";
 import DeleteButton from "../components/DeleteButton";
+import { API_PRODUCTION } from "../data/API";
 
 type CarData = {
   id: number;
@@ -32,7 +33,7 @@ type CarData = {
   deleted_at: string | null;
 };
 
-const API_URL: string = "http://localhost:8000/api/cars";
+const API_URL: string = `${API_PRODUCTION}/api/cars`;
 
 const Cars = () => {
   // Pop Up Message

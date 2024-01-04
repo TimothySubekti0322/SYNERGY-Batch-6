@@ -8,7 +8,7 @@ import ApiCars from "./routes/api/ApiCars";
 
 import ApiOrders from "./routes/api/ApiOrders";
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 const PUBLIC_DIR = path.join(__dirname, "public");
 
 class Server {

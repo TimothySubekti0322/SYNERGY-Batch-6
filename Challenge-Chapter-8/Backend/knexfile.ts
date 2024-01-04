@@ -5,7 +5,8 @@ import type { Knex } from "knex";
 const config: { [key: string]: Knex.Config } = {
   development: {
     client: "postgresql",
-    connection: "postgres://postgres:docker@127.0.0.1:5432/postgres",
+    connection:
+      "postgres://synergy_ch_8_server:NSYM8S0vV1ucTLE@app-server-db.flycast:5432/synergy_ch_8_server?sslmode=disable",
     pool: {
       min: 2,
       max: 10,
@@ -17,7 +18,8 @@ const config: { [key: string]: Knex.Config } = {
 
   staging: {
     client: "postgresql",
-    connection: "postgres://postgres:docker@127.0.0.1:5432/postgres",
+    connection:
+      "postgres://synergy_ch_8_server:NSYM8S0vV1ucTLE@app-server-db.flycast:5432/synergy_ch_8_server?sslmode=disable",
     pool: {
       min: 2,
       max: 10,
@@ -29,7 +31,8 @@ const config: { [key: string]: Knex.Config } = {
 
   production: {
     client: "postgresql",
-    connection: "postgres://postgres:docker@127.0.0.1:5432/postgres",
+    connection:
+      "postgres://synergy_ch_8_server:NSYM8S0vV1ucTLE@app-server-db.flycast:5432/synergy_ch_8_server?sslmode=disable",
     pool: {
       min: 2,
       max: 10,

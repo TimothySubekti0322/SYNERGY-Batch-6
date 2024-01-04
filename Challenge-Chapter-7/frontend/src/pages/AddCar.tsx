@@ -14,7 +14,7 @@ import SizeInput from "../components/Input/SizeInput";
 import ImageInput from "../components/Input/ImageInput";
 import PhotoDescription from "../components/PhotoDescription";
 import axios from "axios";
-
+import { API_PRODUCTION } from "../data/API";
 
 const AddCar = () => {
   const [name, setName] = useState("");
@@ -62,7 +62,7 @@ const AddCar = () => {
     formData.append("photo", photo!);
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/cars",
+        `${API_PRODUCTION}/api/cars`,
         formData,
         {
           headers: {
@@ -108,7 +108,7 @@ const AddCar = () => {
 
           <div className="flex grow">
             {/* <!-- White Navbar --> */}
-            <WhiteNavbar />
+            <WhiteNavbar title1="" title2="" />
 
             {/* <!-- Main Content --> */}
             <section
@@ -138,13 +138,16 @@ const AddCar = () => {
                 <section className="w-full bg-white rounded-sm p-4 mt-4">
                   <form>
                     {/* <!-- Nama --> */}
-                    <NameInput  value="" handleInputChange={handleInputChange} />
+                    <NameInput value="" handleInputChange={handleInputChange} />
 
                     {/* <!-- Sewa Per Hari --> */}
                     <CostInput value="" handleInputChange={handleInputChange} />
 
                     {/* <!-- Size --> */}
-                    <SizeInput value="" handleSelectChange={handleSelectChange} />
+                    <SizeInput
+                      value=""
+                      handleSelectChange={handleSelectChange}
+                    />
 
                     {/* <!-- Photo --> */}
                     <ImageInput

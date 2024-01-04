@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./dist/server.js",
-    "postinstall": "tsc -p .",
     "dev": "ts-node-dev server.ts",
     "lint": "eslint */**.ts",
     "build": "tsc -p .",
     "prod": "node ./dist/server.js",
+    "db:start": "knex migrate:rollback --env production --knexfile ./dist/knexfile.js && knex migrate:latest --env production --knexfile ./dist/knexfile.js && knex seed:run --env production --knexfile ./dist/knexfile.js && node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

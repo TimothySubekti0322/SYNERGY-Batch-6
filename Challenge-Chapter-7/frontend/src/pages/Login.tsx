@@ -1,6 +1,7 @@
 import React, { useState, FormEvent } from "react";
 import PublicProvider from "../providers/PublicProvider";
 import axios from "axios";
+import { API_PRODUCTION } from "../data/API";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
@@ -11,13 +12,10 @@ const Login = () => {
     e.preventDefault();
     console.log(email, password);
     try {
-      const response = await axios.post(
-        "http://localhost:8000/api/auth/login",
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post(`${API_PRODUCTION}/api/auth/login`, {
+        email,
+        password,
+      });
 
       localStorage.setItem("token", response?.data?.token);
       const role = response.data.role;
