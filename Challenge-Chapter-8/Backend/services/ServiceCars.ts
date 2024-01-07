@@ -12,7 +12,7 @@ class ServiceCars {
 
       const uploadResponse = await storage.uploader.upload(file);
 
-      console.log(uploadResponse);
+      // console.log(uploadResponse);
 
       const imageUrl: string = uploadResponse.url;
       const response = await Cars.create(payload, imageUrl);
@@ -58,7 +58,7 @@ class ServiceCars {
 
         const uploadResponse = await storage.uploader.upload(file);
 
-        console.log(uploadResponse);
+        // console.log(uploadResponse);
 
         const imageUrl: string = uploadResponse.url;
         payload.imageUrl = imageUrl;

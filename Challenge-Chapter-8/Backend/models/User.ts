@@ -44,6 +44,18 @@ class User {
       return { message: error, data: "", status: 400 };
     }
   }
+
+  async remove(email: string) {
+    try {
+      const data = await database("users").where("email", email).del();
+      if (data === 0) {
+        return { message: "Data not found", status: 404 };
+      }
+      return { message: "Success delete data", status: 200 };
+    } catch (error) {
+      return { message: error, status: 400 };
+    }
+  }
 }
 
 export default new User();

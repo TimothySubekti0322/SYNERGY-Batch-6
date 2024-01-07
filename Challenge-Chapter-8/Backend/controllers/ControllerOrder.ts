@@ -36,6 +36,9 @@ class ControllerOrder implements IRestController {
 
   async create(req: Request, res: Response) {
     try {
+      const tokenPayload = await authToken(req, res);
+      req.body.user_email = tokenPayload.data.email;
+      req.body.status = "rented"
       const response = await ServiceOrder.create(req.body);
       res.status(200).json(response);
     } catch (error) {

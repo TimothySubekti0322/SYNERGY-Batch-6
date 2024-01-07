@@ -29,13 +29,11 @@ class ControllerLogin {
         }
       );
 
-      res
-        .status(200)
-        .json({
-          message: response.message,
-          token: token,
-          role: response.data[0].role,
-        });
+      res.status(200).json({
+        message: response.message,
+        token: token,
+        role: response.data[0].role,
+      });
     } catch (error) {
       res.status(500).json({
         message: "JWT Error",
@@ -65,7 +63,13 @@ class ControllerLogin {
     const role = "admin";
     req.body.role = role;
     try {
-      const response = await ServiceAuth.register(req.body);
+      if (!req.body.email || !req.body.username || !req.body.password) {
+        return res
+          .status(400)
+          .json({ message: "Email, Username, and Password is required" });
+      }
+
+      const response = await ServiceAuth.registerAdmin(req.body);
 
       if (response.status !== 200) {
         return res.status(response.status).json({ message: response.message });

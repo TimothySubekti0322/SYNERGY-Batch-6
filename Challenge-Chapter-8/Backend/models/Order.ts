@@ -16,7 +16,7 @@ class Order {
     try {
       const data = await database("orders").insert(payload);
       if (data) {
-        return { message: "Success", status: 200 };
+        return { message: "Success", status: 201 };
       }
       return { message: "Failed", status: 500 };
     } catch (error) {
@@ -68,6 +68,19 @@ class Order {
         return { message: "Success", status: 200 };
       }
       return { message: "Failed", status: 500 };
+    } catch (error) {
+      return { message: error, status: 500 };
+    }
+  }
+
+  async getHighestId() {
+    try {
+      const data = await database
+        .select("*")
+        .from("orders")
+        .orderBy("id", "desc")
+        .limit(1);
+      return data[0].id;
     } catch (error) {
       return { message: error, status: 500 };
     }

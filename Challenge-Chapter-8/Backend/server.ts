@@ -34,10 +34,18 @@ class Server {
     this.app.use("/api/orders", ApiOrders.routes());
   }
   run() {
-    this.app.listen(PORT, () => {
-      console.log("Server running on http://localhost:%s", PORT);
-    });
+    if (process.env.NODE_ENV !== "test") {
+      this.app.listen(PORT, () => {
+        console.log("Server running on http://localhost:%s", PORT);
+      });
+    }
+  }
+  getAppInstance(): Express {
+    // Method to retrieve the app instance
+    return this.app;
   }
 }
 
 new Server().run();
+
+export default new Server().getAppInstance();
