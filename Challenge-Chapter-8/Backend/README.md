@@ -1,40 +1,48 @@
-# SYNERGY ACADEMY CHALLENGE CHAPTER 6
+# SYNERGY ACADEMY CHALLENGE CHAPTER 8
 
 ## Description
-
 Project Overview
 
-This project, developed specifically for the SYNERGY Academy Challenge, introduces a sophisticated REST API designed for comprehensive car management. It incorporates state-of-the-art authentication features, ensuring a secure and reliable user experience.
+Welcome to my last website development project for SYNERGY Challenge! This project utilizes React.js for the front end, Express.js with TypeScript for the back end, and incorporates modern development practices to ensure efficiency, scalability, and maintainability. Our main goals include successful deployment of both the front end and back end, implementation of Continuous Integration/Continuous Deployment (CI/CD) pipelines, and the establishment of a robust testing framework using Jest.
 
 **Technical Stack**
 
-- **ORM (Object-Relational Mapping)**: Utilizes knex.js, a dynamic and flexible ORM, enabling efficient interaction with the database.
-- **Database**: Leverages PostgreSQL within a Docker environment, ensuring robust data management and scalability.
-- **Architecture**: Adopts the Service Repository pattern, a modern architectural approach that enhances modularity and maintainability of the codebase.
+- **Front End :** 
+    - Vite + React.js
+- **Back End :**
+    - Express.js
+    - TypeScript
+- **Deployment Platforms :**
+    - Vercel (Front End)
+    - Fly.io (Back End) 
+
 
 Detailed instructions for setup and configuration will be provided, ensuring a seamless integration and deployment process for users.
 
-## Technologies
 
-- Node.js
-- Express.js
-- Knex.js
-- Typecript
-- Docker
 
 ## Getting Started
 
-These instructions will get your copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get your copy of the project up and running on your local machine for development and run the JEST for testing purpose.
 
 First of all you need to clone this project or **download the file**
 
 ```bash
 git clone https://github.com/TimothySubekti0322/SYNERGY-Batch-6.git
-cd Challenge-Chapter-6
+cd Challenge-Chapter-8
 ```
 
-Then install all the dependencies by simply run this code on the terminal
+**Set Up Backend**
 
+When you arrive at Challenge-Chapter-7 you will find 2 folder there. "frontend" folder and "Backend" folder. in this section we will run the "backend" side
+
+Firstly, go to Backend directory
+
+```bash
+cd Backend
+```
+
+install all the dependencies by simply run this code on the terminal
 ```bash
   npm install
 ```
@@ -44,20 +52,12 @@ Next, Create a .env file that contains your personal database credential. Copy t
 ```bash
   JWT_SECRET_KEY=YOUR_JWT_SECRET_KEY_HERE
 ```
-
 Run this command bellow to create postgres container in docker
-
 ```bash
 docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 postgres
 ```
 
 Run migration to create database in your local database that using this command bellow
-
-```bash
-  npx knex migrate:up
-```
-
-or
 
 ```bash
   npx knex migrate:latest
@@ -68,180 +68,55 @@ Then run this command below filled initial data in your database
 ```bash
   npx knex seed:run
 ```
-
-then to run the website locally , you need to run this command below
+Now you can try the testing using JEST by typing the command below in terminal
 
 ```bash
-  npm run dev
+  npx jest --coverage
 ```
 
-Now you can run the API Service in http://localhost:8000/
-
+#Note : if test are failed, please try to run the JEST again. this can be caused by exceed limit / timeout from testing Post Cars endpoint that use Image upload processing into cloudinary
 ## NOTES
-
 Super Admin Account
 
-**email** : "superadmin@gmail.com"
+**email**    : "superadmin@gmail.com"
 
 **password** : "superadmin"
 
-## API Documentation
+-----------------------------------
 
-here i'm created API Documentation using stoplight Element
+Super Admin Account
 
-https://timothysubekti0322.stoplight.io/studio/synergy-challenge-chapter-6?source=dQbuAYdc3_6SCa-NFTu5_
+**email**    : "admin1@gmail.com"
 
-**Download Postman File below**
+**password** : "admin1"
 
-[Download Postman Collection](https://github.com/TimothySubekti0322/SYNERGY-Batch-6/blob/main/Challenge-Chapter-6/Challenge-Chapter-6.postman_collection.json)
+------------------------------------------------------
 
-### Get all cars
+member Account
 
-Retrieve all cars Data
+**email**    : "member1@gmail.com"
 
-**Authorization: bearer {{token}}**
+**password** : "member1"
 
-```bash
-  GET /api/cars
-```
 
-### Get car by id
 
-Retrieve spesific car data based on id
 
-**Authorization: bearer {{token}}**
 
-```bash
-  GET /api/cars/:id
-```
 
-### Get available cars
 
-Retrieve all cars that available
+## Deployment
 
-**Authorization: bearer {{token}}**
+- **Front End :**
+    - Deployed on Vercel
+    - Live URL : https://synergy-chapter-8-client.vercel.app/
 
-```bash
-  GET /api/cars/available
-```
+- **Back End :**
+    - Deployed on Fly.io
+    - Live URL: https://synergy-ch-8-server.fly.dev
 
-### Add Car
 
-add car data into database
-
-**Authorization: bearer {{token}}**
-
-```bash
-  POST /api/cars
-```
-
-Body Request
-
-```bash
-{
-  "name": String,
-  "cost": Integer,
-  "size": ["Small", "Medium", "Large"],
-  "available": boolean,
-}
-```
-
-### Delete Car
-
-Delete spesific car based on id
-
-**Authorization: bearer {{token}}**
-
-```bash
-  DELETE /api/cars/:id
-```
-
-### Update Car
-
-Delete spesific car based on id
-
-**Authorization: bearer {{token}}**
-
-```bash
-  UPDATE /api/cars/:id
-```
-
-Body Request
-
-```bash
-{
-  "name": String,
-  "cost": Integer,
-  "size": ["Small", "Medium", "Large"],
-  "available": boolean,
-}
-```
-
-### Login
-
-Login as super admin, admin, or member
-
-```bash
-  POST api/auth/login/
-```
-
-Body Request
-
-```bash
-{
-  "email": String,
-  "password": String
-}
-```
-
-### Register
-
-Register as a member
-
-```bash
-  POST api/auth/register/
-```
-
-Body Request
-
-```bash
-{
-  "email": String,
-  "username": String,
-  "password": String
-}
-```
-
-### Register admin
-
-Register an admin. This action just could be perform by super admin
-
-**Authorization: bearer {{token}}**
-
-```bash
-  POST api/auth/register-admin
-```
-
-Body Request
-
-```bash
-{
-  "email": String,
-  "username": String,
-  "password": String
-}
-```
-
-### Get Profile
-
-Get Profile from current User
-
-**Authorization: bearer {{token}}**
-
-```bash
-  POST api/auth/profile
-```
 
 ## Feedback
 
 If you have any feedback, please reach out to me at velmothy14@gmai.com
+
